@@ -199,13 +199,7 @@ h1 {
 }
 
 @media (max-width:1225px) {
-    .logos-wrapper {
-        flex-direction: column;
-        gap: 0.4rem;
-        height: fit-content;
-        left: 2rem;
-        bottom: 0;
-    }
+    
 
     .container-grid {
         grid-template-columns: 1fr;
@@ -228,9 +222,16 @@ h1 {
             background-color: rgb(225, 225, 225);
             font-size: 1.8rem;
         }
+        .logos-wrapper {
+            flex-direction: column;
+            gap: 0.4rem;
+            height: fit-content;
+            left: .4rem;
+            bottom: 0;
+        }
         .logos-wrapper img {
-            max-height: 6rem;
-            width: 6rem;
+            max-height: 4rem;
+            width: 4rem;
         }
         .service-content-wrapper{
             flex-direction: column;
