@@ -4,8 +4,9 @@
 }
 
 :root {
-    --lin-grad-1:rgba(0, 0, 0, 0.835);
+    --lin-grad-1:rgba(0, 0, 0, 0.303);
     --lin-grad-2:rgba(0, 0, 0, 0.867);
+    --bg-image:url(./imagenes/IMG-20231129-WA0009.jpg);
 }
 html {
     font-size: 62.5%;
@@ -23,16 +24,7 @@ h1 {
 
 .box-1 {
     background: linear-gradient(45deg, var(--lin-grad-1) 5%, var(--lin-grad-2)),
-            url(./imagenes/IMG-20231129-WA0009.jpg) center/cover no-repeat ;
-    width: 100%;
-    height: 50vh;
-    position: relative;
-    padding-top: 4rem;
-}
-
-.box-2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.584), rgba(0, 0, 0, 0.8)), 
-    url(./imagenes/IMG-20231129-WA0010.jpg) center/cover no-repeat fixed;
+            var(--bg-image) center/cover no-repeat ;
     width: 100%;
     height: 50vh;
     position: relative;
@@ -49,7 +41,6 @@ h1 {
     color: black;
     border-radius: 2rem;
     padding: 3rem 4rem;
-    font-size: 1.8rem;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -62,6 +53,7 @@ button {
     padding: 0.6rem 1.2rem;
     width: fit-content;
     border-radius: 1.5rem;
+    font-size: 1.5rem;
 }
 h1 {
     color: white;
@@ -87,6 +79,7 @@ h1 {
     left: 4rem;
 }
 
+
 .logos-wrapper img {
     max-height: 8rem;
     aspect-ratio: 1;
@@ -102,7 +95,7 @@ h1 {
 }
 .container-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: .5rem;
 }
 .container-grid > div {
@@ -203,4 +196,43 @@ h1 {
 }
 .service:hover::after {
     transform: translateX(0);
+}
+
+@media (max-width:1225px) {
+    .logos-wrapper {
+        flex-direction: column;
+        gap: 0.4rem;
+        height: fit-content;
+        left: 2rem;
+        bottom: 0;
+    }
+
+    .container-grid {
+        grid-template-columns: 1fr;
+    }
+    .flying-box {
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+    }
+        .input-wrapper {
+            font-size: 1.7rem;
+        }
+        .input-wrapper>i {
+            max-width: 2.4rem;   
+        }
+    
+        .input-wrapper>input {
+            padding-left: 2.5rem;
+            background-color: rgb(225, 225, 225);
+            font-size: 1.8rem;
+        }
+        .logos-wrapper img {
+            max-height: 6rem;
+            width: 6rem;
+        }
+        .service-content-wrapper{
+            flex-direction: column;
+        }
 }
