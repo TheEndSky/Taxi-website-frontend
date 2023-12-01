@@ -18,7 +18,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Turismo Puerto Vallarta">
     <meta property="og:description" content="Servicio de Tours y transporte en puerto Vallarta Mexico">
-    <meta property="og:image" content="./Imagenes/Turistico/sean-oulashin-KMn4VEeEPR8-unsplash.jpg">
+    <meta property="og:image" content="./imagenes/SVG/MasterCard_Logo.svg">
     <meta property="og:image:alt" content="alt si la imagen no carga">
 </head>
 <body id="inicio">
@@ -30,15 +30,16 @@
             <ul id="navigation">
                 <li><a href="#inicio">Inicio</a></li>
                 <li id="transportes">
-                    <div class="flex justify-center place-items-center gap-2">
-                        <span aria-controls="tipo-transportes" aria>Transporte</span>
-                        <img src="./imagenes/SVG/caret-down-solid.svg" 
-                            class="smallest-w-icon">
+                    <button class="transporte-btn" aria-controls="tipo-transportes" aria-expanded="false">
+                        Transporte
+                        <img src="./imagenes/SVG/caret-down-solid.svg" alt="" class="smallest-w-icon">
+                    </button>
+                    <div class="subnavigation-wrapper">
+                        <ul class="subnavigation" id="tipo-transportes">
+                            <li aria-hidden="true"><a tabindex="-1" href="#local">Local</a></li>
+                            <li aria-hidden="true"><a tabindex="-1" href="#foraneo">Foraneo</a></li>
+                        </ul>
                     </div>
-                    <ul class="subnavigation" id="tipo-transportes" aria-expanded="false">
-                        <li aria-hidden="true"><a href="#local">Local</a></li>
-                        <li aria-hidden="true"><a href="#foraneo">Foraneo</a></li>
-                    </ul>
                 </li>
                 <li><a href="#tours">Tours</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -54,8 +55,7 @@
                         y la segunda ciudad mas importante del estado de Jalisco
                 </span>
                     <a href="#contact">Planea tu viaje</a>
-                </div>
-               
+                </div> 
             <div class="logos-wrapper">
                 <img src="./imagenes/SVG/MasterCard_Logo.svg" alt="">
                 <img src="./imagenes/SVG/Visa_Inc._logo.svg" alt="">
@@ -79,7 +79,7 @@
                 <i class="fa-solid fa-shield"></i>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatem odio voluptatibus? Rerum, libero natus!</p>
             </div>
-            <div class="service">\
+            <div class="service">
                 <h3>Horario Ajustable</h3>
                 <i class="fa-solid fa-calendar-days"></i>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, commodi?</p>

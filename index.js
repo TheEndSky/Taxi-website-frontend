@@ -1,93 +1,81 @@
-// const tabsList = document.getElementById('navs-container') 
-// const tabsBtns = tabsList.querySelectorAll('#navs-container >li > a')
-// const tabsPanels = document.querySelectorAll('.tab-container')
 
-// tabsList.setAttribute('role', "tablist")
+    //Catch query selectors
+function validElSelect(selector,parent) {
+    const el = parent ? parent.querySelector(selector) : 
+    document.querySelector(selector)
+    if (!el) throw new Error (`${selector} is not a valid query Element`)
+    return el
+}
+    // Variables
+const barsMenuBtn =  validElSelect('.bars-menu-btn')
+const closeMenuBtn =  validElSelect('.close-menu-btn')
+const navbar =  validElSelect('.navbar')
+const transporteSubMenuBtn =  validElSelect('.transporte-btn')
+const subMenuList = validElSelect('.subnavigation-wrapper')
+const subList = validElSelect('#tipo-transportes')
+const subEls = subList.querySelectorAll('li')
 
-// tabsList.querySelectorAll('li').forEach(li => {
-//     li.setAttribute('role',"presentation")
-// })
 
-// //Making all nav buttons be skipped when tabbing. This is the recommended behaviour for accesibility
-// tabsBtns.forEach((tab,index) => {
-//     if(index === 0) {
-//         tab.setAttribute("aria-selected","true")
-//     } else {
-//         tab.setAttribute('tabindex',"-1")
-//         tabsPanels[index].setAttribute('hidden', "")
-//     }
-// })
-// //After displaying a panel after clicking a nav button. Make it the next element to be jumped to whenever you tab
-// tabsPanels.forEach(panel => {
-//     panel.setAttribute('tabindex',0)
-// })
+function showNavBar() {
+    barsMenuBtn.setAttribute('aria-expanded', true)
+    navbar.classList.add('open')
+    barsMenuBtn.classList.add('clicked')
+    subMenuList.classList.remove('open')
+}
+function hideNavBar() {
+    barsMenuBtn.setAttribute('aria-expanded', false)
+    navbar.classList.remove('open')
+    barsMenuBtn.classList.remove('clicked')
+    subMenuList.classList.remove('open')
 
-// tabsList.addEventListener('click', e => {
-//     // Looks for the closest link element
-//     const clickedTab = e.target.closest('a')
-//     //Returns null if clicking anything but a link element
-//     if (!clickedTab) return
-//     e.preventDefault()
-//     switchTab(clickedTab)
-//     clickedTab.classList.add('active-link')
-// })
-// tabsList.addEventListener('keydown', e => {
-//     switch (e.key) {
-//         case "ArrowLeft":
-//             moveLeft();
-//             break;
-//         case "ArrowRight":
-//             moveRight();
-//             break;
-//         case "Home":
-//             e.preventDefault()
-//             switchTab(tabsBtns[0]);
-//             break;
-//         case "End":
-//             e.preventDefault()
-//             switchTab(tabsBtns[tabsBtns.length - 1]);
-//             break;
-//     }
-// })
-// function moveLeft() {
-//     //Get the current element selected by tabs or not.
-//     const currentTab = document.activeElement;
-//     if(!currentTab.parentElement.previousElementSibling) {
-//         switchTab(tabsBtns[tabsBtns.length - 1])
-//     } else {
-//         //Looks at the current tab, gets the parent element (list item), get the previous list item. And then grab the link in that previous element.
-//         switchTab(currentTab.parentElement.previousElementSibling.querySelector('a'))
-//     }
-    
-// }
+    subEls.forEach(el => {
+        const link = el.querySelector('a')
+        link.tabIndex = -1
+        el.setAttribute('aria-hidden', false)
+        transporteSubMenuBtn.setAttribute('aria-expanded',false)
+    })
+}
 
-// function moveRight() {
-//     //Get the current element selected
-//     const currentTab = document.activeElement;
-//     //If in the last tab, go back to the first
-//     if(!currentTab.parentElement.nextElementSibling) {
-//         switchTab(tabsBtns[0])
-//     } else {
-//         switchTab(currentTab.parentElement.nextElementSibling.querySelector('a'))
-//     }
-    
-// }
+barsMenuBtn.addEventListener('click', () =>{
+    showNavBar()
+})
+closeMenuBtn.addEventListener('click', () => {
+    hideNavBar()
+})
+navbar.addEventListener('click',(e) => {
+    const link = e.target.closest('a')
+    if (!link) return
+    hideNavBar()
+})
+transporteSubMenuBtn.addEventListener('click', () => {
+    subMenuList.classList.toggle('open')
+    subEls.forEach(el => {
+        const link = el.querySelector('a')
+        if (subMenuList.classList.contains('open')) {
+            link.tabIndex = 0
+            el.setAttribute('aria-hidden', false)
+            transporteSubMenuBtn.setAttribute('aria-expanded',true)
+        }
+        else {
+            link.tabIndex = -1
+            el.setAttribute('aria-hidden', false)
+            transporteSubMenuBtn.setAttribute('aria-expanded',false)
+        }
+    } )
+})
 
-// function switchTab(newTab) {
-//     const activePanelId = newTab.getAttribute('href')
-//     const activePanel = document.querySelector(activePanelId)
-//     //Accesibility
-//     tabsBtns.forEach(btn => {
-//         btn.setAttribute('aria-selected', false)
-//         btn.setAttribute("tabindex","-1")
-//     })
-//     //Hide every list item
-//     tabsPanels.forEach(panel => panel.setAttribute('hidden','true'))
-
-//     //Put those attributes back to the current active tab
-//     activePanel.removeAttribute('hidden')
-//     newTab.setAttribute('aria-selected',true)
-//     newTab.setAttribute('tabindex',"0")
-//     //If you switch tabs with our moveLeft moveRight functions() make them to be the new focused element
-//     newTab.focus()
-// }
+subEls.forEach(li => {
+    const link = li.closest('a')
+    if (!link) return
+    li.addEventListener('click',() => {
+        link.tabIndex = -1
+        el.setAttribute('aria-hidden', false)
+        transporteSubMenuBtn.setAttribute('aria-expanded',false)
+    })
+})
+window.addEventListener('keydown', (e) => {
+    if (navbar.classList.contains('open') && e.key === 'Escape') hideNavBar() 
+})
+window.addEventListener('click', (e) => {
+    if (navbar.classList.contains('open') && e.key === 'Escape') hideNavBar() 
+})
