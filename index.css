@@ -5,8 +5,8 @@
 }
 
 :root {
-    --lin-grad-1:rgba(0, 0, 0, 0.303);
-    --lin-grad-2:rgba(0, 0, 0, 0.867);
+    --lin-grad-1: rgba(0, 0, 0, 0.303);
+    --lin-grad-2: rgba(0, 0, 0, 0.867);
     --bg-image:url(./imagenes/IMG-20231129-WA0009.jpg);
     --color_Theme-1:#FDB813;
     --color_Theme-2:#2A2A2A;
@@ -18,6 +18,9 @@
     --main_content-small-fontSize:2rem;
     --main_content-button-fontSize:2rem;
     --service_Icons-size:10rem;
+    --Header_Vertical_Padding:0.8rem;
+    --header_Bg_color:blue;
+    --header_font_color:white;
 }
 html {
     font-size: 62.5%;
@@ -36,9 +39,105 @@ a:visited {
     color: inherit;
     text-decoration: none;
 }
-section {
-    margin: 2rem 0;
+section{
+    padding: 2rem 0;
 }
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--Header_Vertical_Padding) 4rem;
+    gap: 1.8rem;
+    background-color: var(--header_Bg_color);
+    color: var(--header_font_color);
+    z-index: 999;
+    font-family: var(--font_Style-1);
+}
+
+header>.navbar {
+    width: 100%;
+}
+
+.navbar>#navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#navigation>li {
+    padding: 5px 12px;
+    border-radius: 14px;
+    transition: 0.2s ease;
+    transition-property: background, color;
+    cursor: pointer;
+}
+
+#navigation>li:hover {
+    background-color: var(--header_font_color);
+    color: var(--text_Color);
+}
+
+#navigation>li:hover img {
+    filter: invert(1);
+    transition: filter 0.2s ease;
+}
+
+#transportes {
+    position: relative;
+}
+
+#transportes>#tipo-transportes {
+    position: absolute;
+    margin-top: 0.5rem;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    background-color: rgb(222, 222, 222);
+    border-radius: 6px;
+    display: none;
+}
+
+#transportes:hover>#tipo-transportes {
+    display: block;
+}
+
+#tipo-transportes>li {
+    margin: 0.4rem 0;
+    padding: 0.4rem 0.4rem;
+    color: #000;
+}
+
+#tipo-transportes>li:hover,
+#tipo-transportes>li:focus-within {
+    background-color: #9b9b9b;
+
+}
+
+/* Header Icons */
+.bars-menu-btn {
+    background: url('./Imagenes/SVG/bars-solid.svg');
+}
+
+.close-menu-btn {
+    background: url('./Imagenes/SVG/xmark-solid.svg');
+}
+
+.bars-menu-btn,
+.close-menu-btn {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background-repeat: no-repeat;
+    display: none;
+    cursor: pointer;
+}
+
+/* MAIN */
 .main {
     background: linear-gradient(45deg, var(--lin-grad-1) 5%, var(--lin-grad-2)),
     var(--bg-image) center/cover no-repeat ;
@@ -79,7 +178,7 @@ section {
     color: white;
     margin-bottom: 2.3rem;
 }
-.main-content button {
+.main-content a {
     background-color: var(--color_Theme-1);
     padding: 1rem .8rem;
     font-size: var(--main_content-button-fontSize);
@@ -87,6 +186,11 @@ section {
     cursor: pointer;
     width: fit-content;
     font-weight: bold;
+}
+.main-content a:hover {
+    background-color: white;
+    color: var(--color_Theme-2) ;
+    transform: scale(0.98);
 }
 h1 {
     text-shadow: 2px -2px 3px var(--color_Theme-2),
@@ -127,22 +231,42 @@ h1 {
 }
 /* =====Local====== */
 #local {
-
+    background: rgb(207, 208, 205);
+        background: linear-gradient(135deg, rgba(207, 208, 205, 1) 23%, rgba(255, 255, 255, 1) 92%);
 }
+#local h2 {
+}
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: var(--p_big-font-Size);
+    padding: 2rem 3rem;
+    gap: var(--p_big-font-Size);
+    place-items: center;
+}
+.big-text {
+    font-size: var(--p_big-font-Size);
+    line-height: 150%;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
 #big-grid-img {
+    width: 85%;
+
     max-width: 600px;
     border-radius: 100vw;
 }
 /* ======Skills====== */
 #skills {
-    margin-top: 8rem;
-
+    background: rgb(207, 208, 205);
+    background: linear-gradient(45deg, rgba(207, 208, 205, 1) 23%, rgba(255, 255, 255, 1) 92%);
 }
 #skills > h2 {
-    text-align: center;
-    font-size: var(--h2_font-Size);
-    color: black;
+}
+h2 {
     margin-bottom: 2rem;
+    font-size: var(--h2_font-Size);
 }
 /* Service-content-wrapper */
 
@@ -170,7 +294,7 @@ h1 {
     flex: 1;
 }
 .service h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
     font-size: var(--h3_font-Size);
 }
 .service:nth-child(even) {
@@ -205,19 +329,28 @@ h1 {
 .service:hover::after {
     transform: translateX(0);
 }
-#guarantees {
+/* Foraneo */
+#foraneo {
     background-color: var(--color_Theme-2);
-    height: 30vh;
-    width: 100%;
+    color: white;
 }
-/* Extra small devices (phones, 600px and down) */
+
+/* Generic */
+.text-center {
+    text-align: center;
+}
+.sml-icon {
+    max-width: 2.5rem;
+}
+.smallest-w-icon {
+    max-width: 1rem;
+    object-fit: contain;
+}
+/* Extra small devices (phones, 340px and down) */
+
 @media only screen and (max-width: 600px) {
     :root {
-            --lin-grad-1: rgba(0, 0, 0, 0.303);
-            --lin-grad-2: rgba(0, 0, 0, 0.867);
-            --bg-image: url(./imagenes/IMG-20231129-WA0009.jpg);
-            --color_Theme-1: #FDB813;
-            --color_Theme-2: #2A2A2A;
+
             --h1_font-Size: 4rem;
             --h2_font-Size: 2.3rem;
             --h3_font-Size: 1.8rem;
@@ -239,31 +372,57 @@ h1 {
             flex-direction: column;
             align-items: start;
         }
+        .grid-wrapper {
+            grid-template-columns: 1fr;
+        }
         
 }
+@media only screen and (max-width: 340px) {
+    :root {
+        --h1_font-Size: 2.5rem;
+        --h2_font-Size: 2.2rem;
+        --h3_font-Size: 1.9rem;
+        --p_big-font-Size: 1.7rem;
+        --main_content-big-fontSize: 2.2rem;
+        --main_content-small-fontSize: 1.7rem;
+        --service_Icons-size: 5rem;
+        --main_content-button-fontSize: 1.5rem;
+    }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    body {
-            background-color: blue;
-        }
 }
-
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    body {
-        background-color: yellow;
-            
-    }
+   
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    body {
-            background-color: purple;
+:root {
+        --h1_font-Size: 5rem;
+        --h2_font-Size: 3.4rem;
+        --h3_font-Size: 2.6rem;
+        --p_big-font-Size: 2.2rem;
+        --main_content-big-fontSize: 5rem;
+        --main_content-small-fontSize: 3rem;
+        --main_content-button-fontSize: 3rem;
+        --service_Icons-size: 10rem;
+    }
+        .main-content{
+           text-align: start;
         }
+    .main-content strong {
+        font-size: var(--main_content-big-fontSize);
+        color: white;
+        margin-bottom: 3.8rem;
+    }
+
+    .main-content span {
+        font-size: var(--main_content-small-fontSize);
+        color: white;
+        margin-bottom: 3.5rem;
+    }
 }
