@@ -11,10 +11,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Lora&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Hedvig+Letters+Serif:opsz@12..24&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <!-- Swiper JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Open Graph -->
     <meta property="og:title" content="Turismo Puerto Vallarta">
     <meta property="og:description" content="Servicio de Tours y transporte en puerto Vallarta Mexico">
@@ -25,6 +24,7 @@
     <header>
         <span class="logo">Pickup Taxi Service</span>
         <button aria-controls="navigation" aria-expanded="false" class="bars-menu-btn"></button>
+        <div class="modal"></div>
         <nav class="navbar">
             <button aria-controls="navigation" aria-expanded="true" class="close-menu-btn"></button>
             <ul id="navigation">
@@ -50,11 +50,13 @@
         <div class="main">
                 <div class="main-content">
                     <h1>Viaja por Puerto vallarta y sus alrededores</h1>
-                    <span>
-                        Actualmente, uno de los lugares más visitados del país
-                        y la segunda ciudad mas importante del estado de Jalisco
-                </span>
-                    <a href="#contact">Planea tu viaje</a>
+                    <div class="text-wrapper">
+                        <span>
+                            Actualmente, uno de los lugares más visitados del país
+                            y la segunda ciudad mas importante del estado de Jalisco
+                        </span>
+                        <a href="#contact">Planea tu viaje</a>
+                    </div>
                 </div> 
             <div class="logos-wrapper">
                 <img src="./imagenes/SVG/MasterCard_Logo.svg" alt="">
@@ -151,11 +153,11 @@
             </li>
         </ul>
     </section>
-    <section id="contact">
+    <section id="contacto">
         <h2>Ponte en contacto</h2>
         <strong>Conductor</strong>
         <span class="contact-name">Roberto Figueroa</span>
-        <a href="https://wa.me/529712655254" target="_blank" class="contact-whatsapp-link">
+        <a href="https://wa.me/523222179393" target="_blank" class="contact-whatsapp-link">
             <img src="./imagenes/SVG/whatsapp.svg" alt="WhatsApp Icono" class="sml-icon">
             <span aria-label="Numero telefonico" class="contact-phone">+52 322 217 9393</span>
         </a>

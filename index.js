@@ -10,6 +10,8 @@ function validElSelect(selector,parent) {
 const barsMenuBtn =  validElSelect('.bars-menu-btn')
 const closeMenuBtn =  validElSelect('.close-menu-btn')
 const navbar =  validElSelect('.navbar')
+const navigationList =  validElSelect('#navigation')
+const modal =  validElSelect('.modal')
 const transporteSubMenuBtn =  validElSelect('.transporte-btn')
 const subMenuList = validElSelect('.subnavigation-wrapper')
 const subList = validElSelect('#tipo-transportes')
@@ -19,12 +21,14 @@ const subEls = subList.querySelectorAll('li')
 function showNavBar() {
     barsMenuBtn.setAttribute('aria-expanded', true)
     navbar.classList.add('open')
+    modal.classList.add('open')
     barsMenuBtn.classList.add('clicked')
     subMenuList.classList.remove('open')
 }
 function hideNavBar() {
     barsMenuBtn.setAttribute('aria-expanded', false)
     navbar.classList.remove('open')
+    modal.classList.remove('open')
     barsMenuBtn.classList.remove('clicked')
     subMenuList.classList.remove('open')
 
@@ -36,6 +40,9 @@ function hideNavBar() {
     })
 }
 
+modal.addEventListener('click', () => {
+    hideNavBar()
+})
 barsMenuBtn.addEventListener('click', () =>{
     showNavBar()
 })
@@ -43,6 +50,17 @@ closeMenuBtn.addEventListener('click', () => {
     hideNavBar()
 })
 navbar.addEventListener('click',(e) => {
+    if(e.target === navbar || e.target === navigationList) {
+        console.log(e.target.closest('ul'))
+        subMenuList.classList.remove('open')
+        subEls.forEach(el => {
+        const link = el.querySelector('a')
+            link.tabIndex = -1
+            el.setAttribute('aria-hidden', false)
+            transporteSubMenuBtn.setAttribute('aria-expanded',false)
+        })
+        return
+    }
     const link = e.target.closest('a')
     if (!link) return
     hideNavBar()
