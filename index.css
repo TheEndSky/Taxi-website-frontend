@@ -509,11 +509,16 @@ h2 {
         }
         .main {
             width: 100%;
+            padding: calc(var(--Header_Vertical_Padding) * 2 + var(--Header_Font_size) + var(--h1_font-Size)) calc(var(--Header_Vertical_Padding) * 2);
         }
         .main-content {
             margin-left: 0;
             flex-direction: column;
             align-items: start;
+            padding: 7vh 1rem;
+        }
+        .main-content h1 {
+            text-align: center;
         }
         .close-menu-btn {
             position: absolute;
