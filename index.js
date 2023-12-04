@@ -1,5 +1,4 @@
-
-    //Catch query selectors
+//Catch query selectors
 function validElSelect(selector,parent) {
     const el = parent ? parent.querySelector(selector) : 
     document.querySelector(selector)
@@ -97,3 +96,23 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener('click', (e) => {
     if (navbar.classList.contains('open') && e.key === 'Escape') hideNavBar() 
 })
+
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    lazyLoading: true,
+    loop: true,
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+    800: {
+        slidesPerView: 2
+    },
+    1400: {
+        slidesPerView: 3
+    }
+}
+});

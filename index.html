@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicio De Transporte</title>
+    <!-- Page Icon -->
+    <link rel="shortcut icon" href="./imagenes/page-icon.svg" type="image/x-icon">
+    <!-- Style -->
     <link rel="stylesheet" href="index.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/d99f48a841.js" crossorigin="anonymous"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Hedvig+Letters+Serif:opsz@12..24&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Hedvig+Letters+Serif:opsz@12..24&family=Lora:ital,wght@0,400;0,700;1,400&family=Zilla+Slab&display=swap"
         rel="stylesheet">
     <!-- Open Graph -->
     <meta property="og:title" content="Turismo Puerto Vallarta">
@@ -67,7 +72,7 @@
     <section id="local" >
         <h2 class="text-center">Adentrate a algo muy importante</h2>
         <div class="grid-wrapper">
-            <img src="./imagenes/pexels-roberto-hund-5356240.jpg" alt="" id="big-grid-img">
+            <img src="./imagenes/pickup-taxi.jpg">
             <p class="big-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit ad molestiae, dignissimos, suscipit illo
                 saepe nemo sapiente quia ullam placeat delectus, quos minima maiores blanditiis error maxime laudantium consectetur
                 atque.</p>
@@ -82,8 +87,8 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatem odio voluptatibus? Rerum, libero natus!</p>
             </div>
             <div class="service">
-                <h3>Horario Ajustable</h3>
-                <i class="fa-solid fa-calendar-days"></i>
+                <h3>English Spoken</h3>
+                <strong>EN</strong>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, commodi?</p>
             </div>
             <div class="service">
@@ -93,75 +98,86 @@
             </div>
         </div>
     </section>
-    <section id="foraneo" class="bottom">
+    <section id="foraneo">
         <h2>Visita las diferentes regiones y municipos de Jalisco</h2>
-        <p>Contamos con un servicio de transprote afuera de la region</p>
-        <ul class="flex-container-wrap" id="foraneo-list">
-            <li>
+        <p class="italic">Contamos con un excelente servicio de transporte </p>
+        <div class="swiper mySwiper">
+            <ul class="flex-container-wrap swiper-wrapper" id="foraneo-list">
+                <li class="swiper-slide">
                 <figure>
-                    <img loading="lazy" src="./Imagenes/Locales/hotel.jpg" alt="">
-                    <figcaption>
-                        <span>Guadalajara</span>
-                        <img src="./Imagenes/SVG/icon-location.svg" alt="">
-                    </figcaption>
-                </figure>
-            </li>
-            <li>
+                        <img loading="lazy" src="./imagenes/guadalajara-jalisco.jpg" class="location-icon" alt="">
+                        <figcaption>
+                            <span>Guadalajara</span>
+                            <img src="./imagenes/SVG/icon-location.svg" class="location-icon" alt="">
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="swiper-slide">
                 <figure>
-                    <img loading="lazy" src="./Imagenes/Locales/hotel.jpg" alt="">
-                    <figcaption>
-                        <span>Mascota</span>
-                        <img src="./Imagenes/SVG/icon-location.svg" alt="">
-                    </figcaption>
-                </figure>
-            </li>
-            <li>
+                        <img loading="lazy" src="./imagenes/mascota-jalisco.jpg" alt="">
+                        <figcaption>
+                            <span>Mascota</span>
+                            <img src="./imagenes/SVG/icon-location.svg" class="location-icon" alt="">
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="swiper-slide">
                 <figure>
-                    <img loading="lazy" src="./imagenes/locales/hotel.jpg" alt="">
-                    <figcaption>
-                        <span>San Sebastian</span>
-                        <img src="./Imagenes/SVG/icon-location.svg" alt="">
-                    </figcaption>
-                </figure>
-            </li>
-            <li>
+                        <img loading="lazy" src="./imagenes/mascota-jalisco.jpg" alt="">
+                        <figcaption>
+                            <span>San Sebastian</span>
+                            <img src="./imagenes/SVG/icon-location.svg" class="location-icon" alt="">
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="swiper-slide">
                 <figure>
-                    <img loading="lazy" src="./imagenes/locales/hotel.jpg" alt="">
-                    <figcaption>
-                        <span>Melaque</span>
-                        <img src="./Imagenes/SVG/icon-location.svg" alt="">
-                    </figcaption>
-                </figure>
-            </li>
-            <li>
+                        <img loading="lazy" src="./imagenes/mascota-jalisco.jpg" alt="">
+                        <figcaption>
+                            <span>Melaque</span>
+                            <img src="./imagenes/SVG/icon-location.svg" class="location-icon" alt="">
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="swiper-slide">
                 <figure>
-                    <img loading="lazy" src="./imagenes/locales/hotel.jpg" alt="">
-                    <figcaption>
-                        <span>Barra de navidad</span>
-                        <img src="./Imagenes/SVG/icon-location.svg" alt="">
-                    </figcaption>
-                </figure>
-            </li>
-            <li>
+                        <img loading="lazy" src="./imagenes/mascota-jalisco.jpg" alt="">
+                        <figcaption>
+                            <span>Barra de navidad</span>
+                            <img src="./imagenes/SVG/icon-location.svg" class="location-icon" alt="">
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="swiper-slide">
                 <figure>
-                    <img loading="lazy" src="./imagenes/locales/hotel.jpg" alt="">
-                    <figcaption>
-                        <span>Tepic</span>
-                        <img src="./Imagenes/SVG/icon-location.svg" alt="">
-                    </figcaption>
-                </figure>
-            </li>
-        </ul>
+                        <img loading="lazy" src="./imagenes/mascota-jalisco.jpg" alt="">
+                        <figcaption>
+                            <span>Tepic</span>
+                            <img src="./imagenes/SVG/icon-location.svg" class="location-icon" alt="">
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>  <!-- End of section -->
+
+    <section id="tours">
+        <h2>Algo sobre tours</h2>
     </section>
     <section id="contacto">
         <h2>Ponte en contacto</h2>
-        <strong>Conductor</strong>
-        <span class="contact-name">Roberto Figueroa</span>
-        <a href="https://wa.me/523222179393" target="_blank" class="contact-whatsapp-link">
-            <img src="./imagenes/SVG/whatsapp.svg" alt="WhatsApp Icono" class="sml-icon">
-            <span aria-label="Numero telefonico" class="contact-phone">+52 322 217 9393</span>
-        </a>
-    
+        <div class="personal-info">
+            <div class="driver">
+                <strong>Conductor</strong>
+                <span class="contact-name">Roberto Figueroa</span>
+            </div>
+            <a href="https://wa.me/523222179393" target="_blank" class="contact-whatsapp-link">
+                <img src="./imagenes/SVG/whatsapp.svg" alt="WhatsApp logo" class=" whatsapp-logo">
+                <span aria-label="Numero telefonico" class="contact-phone">+52 322 217 9393</span>
+            </a>
+        </div>
     </section>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
