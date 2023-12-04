@@ -36,7 +36,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family2);
+    font-family: var(--font-family3);
     font-size: 1.6rem;
 }
 
@@ -97,7 +97,7 @@ header {
 /* Navbar */
 .navbar {
     width: 100%;
-    font-family: var(--font-family2);
+    font-family: var(--font-family3);
 }
 .navbar > #navigation {
     display: flex;
@@ -251,6 +251,7 @@ header {
 .text-wrapper{
     display: grid;
 }
+
 .main-content a {
     padding: .8rem 1rem;
     font-size: var(--main_content-button-fontSize);
@@ -260,10 +261,11 @@ header {
     cursor: pointer;
     width: fit-content;
     font-weight: bold;
-    transition: transform 150ms;
+    transition: transform 150ms, background 100ms;
 }
 .main-content a:hover {
     transform: scale(0.98);
+    background-color: var(--color_Theme-1);
 }
 h1 {
     text-shadow: 2px -2px 3px var(--color_Theme-2),
@@ -460,15 +462,12 @@ figcaption img {
     height: fit-content !important;
 }
 
-
 /* SWIPER JS */
-
 .swiper {
     width: 100%;
     max-width: 90%;
     height: 100%;
 }
-
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -477,7 +476,6 @@ figcaption img {
     justify-content: center;
     align-items: center;
 }
-
 .swiper-slide img {
     display: block;
     width: 100%;
@@ -489,11 +487,11 @@ figcaption img {
 .swiper-button-next,
 .swiper-button-prev {
     color:rgba(255, 255, 255, 0.75) !important;
+    transform: translateY(-50%) scale(.85);
 }
-
 /* ======CONTACTO===== */
 #contacto {
-    background-color: white;
+    background-color: green;
     color: black;
     display: grid;
     place-items: center;
