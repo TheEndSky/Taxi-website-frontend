@@ -176,11 +176,11 @@ header {
 
 /* Header Icons */
 .bars-menu-btn {
-    background: url('./Imagenes/SVG/bars-solid.svg');
+    background: url('./Imagenes/SVG/bars-solid.svg') center/cover no-repeat;
 }
 
 .close-menu-btn {
-    background: url('./Imagenes/SVG/xmark-solid.svg');
+    background: url('./Imagenes/SVG/xmark-solid.svg') center/cover no-repeat;
 }
 
 .bars-menu-btn,
@@ -489,34 +489,78 @@ figcaption img {
     color:rgba(255, 255, 255, 0.75) !important;
     transform: translateY(-50%) scale(.85);
 }
+
+/* =====TOURS===== */
+#tours {
+    text-align: center;
+}
 /* ======CONTACTO===== */
 #contacto {
-    background-color: green;
     color: black;
     display: grid;
     place-items: center;
-
+    grid-template-columns: .5fr 1fr;
+    border: 2px solid black;
+    padding: 0;
+}
+/* left side */
+.personal-info {
+    background-color: var(--color_Theme-2);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+.contacto-contexto {
+    color: gold;
+}
+.promo-contexto {
+    font-size: var(--h3_font-Size);
 }
 #contacto h2 {
     text-align: center;
 }
-.driver{
+
+.driver {
     font-size: var(--h2_font-Size);
 }
-.contact-whatsapp-link {
-    display: grid;
-    place-items: center;
-    text-align: center;
+.contact-name {
+    color: var(--Yellow-bright);
+    font-weight: bold;
+
 }
-.contact-phone{
+
+.contact-whatsapp-link {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    color: green !important;
+}
+
+.contact-phone {
     font-size: var(--h3_font-Size);
     font-weight: bold;
     font-family: var(--font-family3);
 }
+
 .whatsapp-logo {
     max-width: calc(var(--h3_font-Size) * 2);
     user-select: none;
 }
+/* Right side */
+.contacto-bg {
+    background: url('./imagenes/contacto.jpg') center/cover fixed no-repeat;
+    height: 100%;
+    min-height: 70vh;
+    width: 100%;
+}
+
 /* Generic */
 .text-center {
     text-align: center;
