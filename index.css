@@ -16,6 +16,8 @@
     --h2_font-Size:2.8rem;
     --h3_font-Size:2.2rem;
     --p_big-font-Size:1.8rem;
+    --p_small-font-size:1.6rem;
+    --p_verySmall-Font-Size:1.3rem;
     --main_content-big-fontSize:4rem;
     --main_content-small-fontSize:2rem;
     --main_content-button-fontSize:2rem;
@@ -323,6 +325,7 @@ h1 {
 #local img {
     border-radius: 25rem;
     max-width: 600px;
+    margin-bottom: 1.5rem;
 }
 .grid-wrapper {
     display: grid;
@@ -344,6 +347,10 @@ h1 {
 #skills {
     background: rgb(207, 208, 205);
     background: linear-gradient(45deg, rgba(207, 208, 205, 1) 23%, rgba(255, 255, 255, 1) 92%);
+}
+.skill-link {
+    font-weight: bold;
+    text-decoration: underline;
 }
 h2 {
     margin-bottom: 2rem;
@@ -389,6 +396,7 @@ h2 {
 .service > strong {
     font-size: var(--service_Icons-size);
     margin-bottom: auto;
+    margin-top: .7rem;
 }
 .service > strong {
     border: 2px solid black;
@@ -431,7 +439,7 @@ h2 {
     font-size: var(--main_content-small-fontSize);
     text-align: center;
 }
-#foraneo-list figure {
+#foraneo-list li > * {
     position: relative;
     flex: 1;
 }
@@ -466,6 +474,7 @@ figure img {
     height: fit-content;
     color: #fff;
     padding: .4rem 2rem;
+    font-size: var(--p_small-font-size);
 }
 /* Location Icon */
 figcaption img {
@@ -482,7 +491,7 @@ figcaption img {
 }
 .swiper-slide {
     text-align: center;
-    font-size: 18px;
+    font-size: var(--main_content-small-fontSize);
     background: #fff;
     display: flex;
     justify-content: center;
@@ -495,6 +504,23 @@ figcaption img {
     object-fit: cover;
     aspect-ratio: 1;
     filter: brightness(.8);
+}
+
+.maps-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 100%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+iframe {
+    position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;   
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -586,6 +612,46 @@ dialog .info-container {
 /* =====TOURS===== */
 #tours {
     text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.55),rgba(0, 0, 0, 0.25) 35%), url('./imagenes/Tours.jpeg') center/cover no-repeat fixed;
+    padding: 0 2rem 4rem 2rem;
+}
+#tours h2 {
+    color: #25D366;
+    text-shadow: 2px 1px 3px black;
+}
+#tours strong {
+    font-size: var(--h3_font-Size);
+}
+
+.tours-information {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(1.3rem);
+    border-radius: 2.5rem;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    color: black;
+    font-size: var(--p_big-font-Size);
+    position: relative;
+}
+#tours-list {
+    display: grid;
+    gap: .4rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+#tours-list > li::before {
+    content: '-';
+    margin-right: .3rem;
+}
+.small-letter {
+    font-size: var(--p_verySmall-Font-Size);
+    text-align: end;
+    font-weight: bold;
+    font-style: italic;
+    position: absolute;
+    right: 1rem;
+    bottom: .5rem;
 }
 /* ======CONTACTO===== */
 #contacto {
@@ -732,6 +798,7 @@ dialog .info-container {
         --main_content-small-fontSize: 1.7rem;
         --service_Icons-size: 5rem;
         --main_content-button-fontSize: 1.5rem;
+        --p_verySmall-Font-Size: 1rem;
     }
     .main-content {
         text-align: start;
