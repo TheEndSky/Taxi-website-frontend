@@ -60,7 +60,7 @@
                             Actualmente, uno de los lugares más visitados del país
                             y la segunda ciudad mas importante del estado de Jalisco
                         </span>
-                        <a href="#contacto">Planea tu viaje</a>
+                        <a href="#contacto" class="plan-travel-btn">Planea tu viaje</a>
                     </div>
                 </div> 
             <div class="logos-wrapper">
@@ -123,7 +123,10 @@
                 </li>
                 <li class="swiper-slide">
                 <figure>
-                        <img loading="lazy" src="./imagenes/mascota-jalisco.jpg" alt="">
+                        <img loading="lazy" src="./imagenes/San sebastian 2.jpg" alt="">
+                        <button class="location-qstn-btn">
+                            ?
+                        </button>
                         <figcaption>
                             <span>San Sebastian</span>
                             <img src="./imagenes/SVG/icon-location.svg" class="location-icon" alt="">
@@ -158,9 +161,21 @@
                     </figure>
                 </li>
             </ul>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div  class="swiper-button-next"></div>
+            <div  class="swiper-button-prev"></div>
         </div>
+        <dialog id="swiper-modal">
+            <div class="info-container flex-col place-items-center justify-center">
+                <button class="close-dialog-btn"></button>
+                <h3>San Sebastian del Oeste</h3>
+                <img class="dialog-main-img" src="./imagenes/San sebastian 1.jpg" alt="">
+                <div class="text-container flex-col place-items-center justify-center">
+                    <strong>Hermoso Pueblo Mágico Minero</strong>
+                    <span>Con clima agradable todo el año </span>
+                    <a href="#contacto" class="plan-travel-btn" id="dialog-contact-btn">Planea tu viaje</a>
+                </div>
+            </div>
+        </dialog>
     </section>  <!-- End of section -->
 
     <section id="tours">

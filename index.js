@@ -98,7 +98,7 @@ window.addEventListener('click', (e) => {
 })
 
 
-var swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
     lazyLoading: true,
@@ -106,6 +106,9 @@ var swiper = new Swiper(".mySwiper", {
     navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+    },
+    keyboard: {
+        enabled:true,
     },
     breakpoints: {
     800: {
@@ -116,3 +119,55 @@ var swiper = new Swiper(".mySwiper", {
     }
 }
 });
+
+const [swiper1PrevBtn, swiper1NextBtn] = [ 
+    validElSelect('.swiper-button-prev'), 
+    validElSelect('.swiper-button-next') 
+]
+
+
+window.addEventListener('keydown', e => {
+    if(e.key === 'ArrowLeft') {
+        swiper1PrevBtn.classList.add('active-color')
+        swiper1NextBtn.classList.remove('active-color')
+    }
+    else if(e.key === 'ArrowRight') {
+        swiper1PrevBtn.classList.remove('active-color')
+        swiper1NextBtn.classList.add('active-color')
+    }
+})
+
+// Modal related things
+const modalSwiper = validElSelect('#swiper-modal')
+const closeDialogBtn = validElSelect('.close-dialog-btn')
+const dialogContactBtn = validElSelect('#dialog-contact-btn')
+
+closeDialogBtn.addEventListener('click', () => {
+    modalSwiper.close()
+})
+
+dialogContactBtn.addEventListener('click', () => {
+    modalSwiper.close()
+})
+modalSwiper.addEventListener('click', (e) => {
+    if (e.target === modalSwiper )
+    modalSwiper.close()
+})
+//Swiper Trigger Buttons
+const qstnBtns = document.querySelectorAll('.location-qstn-btn')
+const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.tabIndex = 0
+            }
+            else {
+                entry.target.tabIndex = -1
+            }
+        }))
+qstnBtns.forEach(btn => {
+    observer.observe(btn)
+    btn.addEventListener('click', () => {
+        modalSwiper.showModal()
+    })
+})
+
+

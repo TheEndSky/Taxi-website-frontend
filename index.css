@@ -179,12 +179,14 @@ header {
     background: url('./Imagenes/SVG/bars-solid.svg') center/cover no-repeat;
 }
 
-.close-menu-btn {
+.close-menu-btn,
+.close-dialog-btn {
     background: url('./Imagenes/SVG/xmark-solid.svg') center/cover no-repeat;
 }
 
 .bars-menu-btn,
-.close-menu-btn {
+.close-menu-btn,
+.close-dialog-btn {
     width: 2rem;
     height: 2rem;
     border: none;
@@ -192,7 +194,9 @@ header {
     display: none;
     cursor: pointer;
 }
-
+.close-dialog-btn {
+    display: block;
+}
 /* MAIN */
 .main {
     background: linear-gradient(45deg, var(--lin-grad-1) 5%, var(--lin-grad-2)),
@@ -252,7 +256,7 @@ header {
     display: grid;
 }
 
-.main-content a {
+.plan-travel-btn {
     padding: .8rem 1rem;
     font-size: var(--main_content-button-fontSize);
     background-color: var(--Yellow-medium-bright);
@@ -263,7 +267,7 @@ header {
     font-weight: bold;
     transition: transform 150ms, background 100ms;
 }
-.main-content a:hover {
+.plan-travel-btn:hover {
     transform: scale(0.98);
     background-color: var(--color_Theme-1);
 }
@@ -431,7 +435,8 @@ figure img {
     aspect-ratio: 1;
 }
 #foraneo > * {
-    max-width: 90%;
+    max-width: 100%;
+    padding: 0 5%;
 }
 #foraneo > h2 {
     text-align: center;
@@ -465,8 +470,9 @@ figcaption img {
 /* SWIPER JS */
 .swiper {
     width: 100%;
-    max-width: 90%;
+    max-width: 90% !important;
     height: 100%;
+    padding: 0 !important;
 }
 .swiper-slide {
     text-align: center;
@@ -489,7 +495,84 @@ figcaption img {
     color:rgba(255, 255, 255, 0.75) !important;
     transform: translateY(-50%) scale(.85);
 }
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+    color: var(--Yellow-bright) !important;
+}
+.active-color {
+    color: var(--Yellow-bright) !important;
+}
 
+/* SWIPER MODALS */
+dialog {
+        width: 100vw !important;
+        height: 100vh !important;
+        min-height: 100vh;
+        z-index: 666;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        position: fixed;
+}
+dialog h3 {
+    margin-bottom: 2rem;
+    font-size: var(--h3_font-Size);
+}
+dialog strong {
+    font-size: var(--p_big-font-Size);
+}
+dialog[open] .info-container{
+    animation: fade-in 0.5s ease forwards;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+        display: flex;
+    }
+}
+dialog .info-container {
+    background-color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    padding: 3rem 1rem;
+    max-width: 70vw;
+    margin: 0 auto;
+    border-radius: 1.4rem;
+}
+.close-dialog-btn {
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+    background-color: black;
+    z-index: 999;
+    border-radius: 100%;
+    padding: .6rem;
+    border: 1px solid black;
+}
+.dialog-main-img {
+    max-width: 450px;
+    max-height: 450px;
+    margin-bottom: 1.8rem;
+}
+.info-container .text-container {
+    gap: 1rem;
+}
+.text-container span {
+    margin-top: 1rem;
+    font-style: italic;
+}
+.text-container a {
+    width: fit-content;
+}
 /* =====TOURS===== */
 #tours {
     text-align: center;
@@ -573,6 +656,10 @@ figcaption img {
 .flex {
     display: flex;
 }
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
 .italic {
     font-style: italic;
     margin-bottom: 2.5rem;
@@ -585,6 +672,26 @@ figcaption img {
 }
 .gap-2 {
     gap: 2rem;
+}
+.location-qstn-btn {
+    border-radius:50rem;
+    padding: .4rem .8rem;
+    font-size: var(--p_big-font-Size);
+    font-weight: bold;
+    background-color: black;
+    backdrop-filter: blur(2rem);
+    color:white;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.location-qstn-btn:hover,
+.location-qstn-btn:focus-visible{
+    background-color: white;
+    color: black;
+    
 }
 /* Extra small devices (phones, 340px and down) */
 
@@ -687,7 +794,7 @@ figcaption img {
         .main-content h1 {
             text-align: center;
         }
-        .main-content a {
+        .plan-travel-btn {
             width: 100%;
             max-width: 250px;
             margin: 0 auto;
@@ -789,7 +896,7 @@ figcaption img {
         color: white;
         margin-bottom: 3.5rem;
     }
-        .main-content a {
+        .plan-travel-btn {
             padding: 1.4rem 1.8rem;
         }
 }
