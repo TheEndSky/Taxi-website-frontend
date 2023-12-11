@@ -174,11 +174,3 @@ qstnBtns.forEach(btn => {
         modalSwiper.showModal()
     })
 })
-
-// Handle google maps
-require('dotenv').config()
-const gmapsIframe = validElSelect('#gmaps-frame')
-
-gmapsIframe.setAttribute('src', `https://www.google.com/maps/embed/v1/streetview?location=19.2002%2C-104.6843&key=${process.env.MAPS_API_KEY}`)
-
-
