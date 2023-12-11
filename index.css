@@ -25,8 +25,9 @@
     --Header_Font_size:1.8rem;
     --Header_Vertical_Padding:0.8rem;
     --font-family1: 'Caveat', cursive;
-    --font-family2: 'Zilla Slab', serif;
-    --font-family3: 'Lora', serif;
+    --font-family2: 'Roboto Slab', serif;
+    /* --font-family3: 'Lora', serif;  */
+    --font-family4: 'DM Sans', sans-serif;
 
 
 }
@@ -36,7 +37,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family3);
+    font-family: var(--font-family2);
     font-size: 1.6rem;
 }
 
@@ -59,7 +60,10 @@ section{
 h1,
 h2,
 h3 {
-        font-family: var(--font-family3);
+        font-family: var(--font-family2);
+}
+h2,h3 {
+    padding-top: 2.8rem;
 }
 
 /* Header */
@@ -97,7 +101,7 @@ header {
 /* Navbar */
 .navbar {
     width: 100%;
-    font-family: var(--font-family3);
+    font-family: var(--font-family2);
 }
 .navbar > #navigation {
     display: flex;
@@ -351,6 +355,7 @@ h2 {
     gap: 2.9rem;
     max-width: 95%;
     margin: 0 auto;
+        padding-bottom: 3.5rem;
 }
 .service {
     display: flex;
@@ -367,6 +372,7 @@ h2 {
     cursor: pointer;
     transition: transform 500ms ease;
     gap: 1.3rem;
+    
 }
 .service h3 {
     font-size: var(--h3_font-Size);
@@ -583,7 +589,7 @@ dialog .info-container {
 }
 /* ======CONTACTO===== */
 #contacto {
-    color: black;
+    color: rgb(29, 29, 29);
     display: grid;
     place-items: center;
     grid-template-columns: .5fr 1fr;
@@ -630,7 +636,7 @@ dialog .info-container {
 .contact-phone {
     font-size: var(--h3_font-Size);
     font-weight: bold;
-    font-family: var(--font-family3);
+    font-family: var(--font-family4);
 }
 
 .whatsapp-logo {
@@ -690,6 +696,7 @@ dialog .info-container {
     right: 2rem;
     cursor: pointer;
     font-size: var(--p_big-font-Size);
+    transition: background 200ms, color 200ms;
 }
 .location-qstn-btn:hover,
 .location-qstn-btn:focus-visible{

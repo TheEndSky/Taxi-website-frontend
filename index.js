@@ -15,7 +15,7 @@ const transporteSubMenuBtn =  validElSelect('.transporte-btn')
 const subMenuList = validElSelect('.subnavigation-wrapper')
 const subList = validElSelect('#tipo-transportes')
 const subEls = subList.querySelectorAll('li')
-
+let isKeyboardNavAllowed = true
 
 function showNavBar() {
     barsMenuBtn.setAttribute('aria-expanded', true)
@@ -107,8 +107,12 @@ const swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
     },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction:true,
+    },
     keyboard: {
-        enabled:true,
+        enabled: isKeyboardNavAllowed,
     },
     breakpoints: {
     800: {
@@ -150,8 +154,9 @@ dialogContactBtn.addEventListener('click', () => {
     modalSwiper.close()
 })
 modalSwiper.addEventListener('click', (e) => {
-    if (e.target === modalSwiper )
-    modalSwiper.close()
+    if (e.target === modalSwiper ) {
+        modalSwiper.close()
+    }
 })
 //Swiper Trigger Buttons
 const qstnBtns = document.querySelectorAll('.location-qstn-btn')
