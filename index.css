@@ -626,7 +626,7 @@ dialog .info-container {
     min-height: 42vh;
 }
 #tours h2 {
-    color: var(--Yellow-medium-bright);
+    color: #2fde5f;
     text-shadow: 2px 1px 3px black;
     margin-bottom: 4rem;
 }
@@ -652,8 +652,6 @@ dialog .info-container {
     gap: .4rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    grid-template-columns: 1fr 1fr;
-
 }
 #tours-list > li::before {
     content: '-';
@@ -662,28 +660,6 @@ dialog .info-container {
 .colored {
     font-weight: bold;
 }
-
-li:nth-child(1) .colored {
-    color: #336e6c;
-}
-li:nth-child(2) .colored {
-    color: #0c9d28;
-}
-li:nth-child(3) .colored{
-    color: #292929;
-
-}
-li:nth-child(4) .colored{
-    color: brown;
-}
-.fa-anchor,
-.fa-plane {
-    position: absolute;
-    bottom:50%;
-    transform: translateY(50%);
-    font-size: 2.8rem;
-}
-
 .small-letter {
     font-size: var(--p_verySmall-Font-Size);
     text-align: end;
