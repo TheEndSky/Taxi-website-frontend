@@ -754,6 +754,8 @@ dialog .info-container {
 .italic {
     font-style: italic;
     margin-bottom: 2.5rem;
+    color: var(--Yellow-medium-bright);
+    text-align: center;
 }
 .justify-center {
     justify-content: center;
