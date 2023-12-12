@@ -531,11 +531,13 @@ iframe {
 }
 .swiper-button-next,
 .swiper-button-prev {
-    color:rgba(255, 255, 255, 0.75) !important;
+    color:white !important;
     transform: translateY(-50%) scale(.85);
 }
 .swiper-button-next:focus,
-.swiper-button-prev:focus {
+.swiper-button-prev:focus,
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
     color: var(--Yellow-bright) !important;
 }
 .active-color {
@@ -619,38 +621,69 @@ dialog .info-container {
 /* =====TOURS===== */
 #tours {
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.55),rgba(0, 0, 0, 0.25) 35%), url('./imagenes/Tours.jpeg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0,0,0,0.55),rgba(0, 0, 0, 0.25) 35%), url('./imagenes/Tour.jpg') center/cover no-repeat fixed;
     padding: 0 2rem 4rem 2rem;
+    min-height: 42vh;
 }
 #tours h2 {
-    color: #25D366;
+    color: var(--Yellow-medium-bright);
     text-shadow: 2px 1px 3px black;
+    margin-bottom: 4rem;
 }
 #tours strong {
     font-size: var(--h3_font-Size);
+    margin-right: .6rem;
 }
 
 .tours-information {
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(1.3rem);
+    background: rgba(255, 255, 255, 0.575);
+    backdrop-filter: blur(.4rem);
     border-radius: 2.5rem;
     width: fit-content;
     margin: 0 auto;
     padding: 3rem 2rem;
     color: black;
-    font-size: var(--p_big-font-Size);
+    font-size: var(--main_content-small-fontSize);
     position: relative;
+    box-shadow: 2px 2px 4px black;
 }
 #tours-list {
     display: grid;
     gap: .4rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    grid-template-columns: 1fr 1fr;
+
 }
 #tours-list > li::before {
     content: '-';
     margin-right: .3rem;
 }
+.colored {
+    font-weight: bold;
+}
+
+li:nth-child(1) .colored {
+    color: #336e6c;
+}
+li:nth-child(2) .colored {
+    color: #0c9d28;
+}
+li:nth-child(3) .colored{
+    color: #292929;
+
+}
+li:nth-child(4) .colored{
+    color: brown;
+}
+.fa-anchor,
+.fa-plane {
+    position: absolute;
+    bottom:50%;
+    transform: translateY(50%);
+    font-size: 2.8rem;
+}
+
 .small-letter {
     font-size: var(--p_verySmall-Font-Size);
     text-align: end;
@@ -662,7 +695,6 @@ dialog .info-container {
 }
 /* ======CONTACTO===== */
 #contacto {
-    color: rgb(29, 29, 29);
     display: grid;
     place-items: center;
     grid-template-columns: .5fr 1fr;
@@ -671,7 +703,7 @@ dialog .info-container {
 }
 /* left side */
 .personal-info {
-    background-color: black;
+    background: rgba(29,29,29);
     width: 100%;
     height: 100%;
     display: flex;
@@ -898,7 +930,8 @@ dialog .info-container {
             height: 20px;
             object-fit: cover;
         }
-        .grid-wrapper {
+        .grid-wrapper,
+        #tours-list {
             grid-template-columns: 1fr;
         }
         /* Header submenu */
